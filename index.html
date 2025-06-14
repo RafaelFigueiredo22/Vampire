@@ -15,27 +15,34 @@
         ctx.fillStyle = "blue"
         ctx.fillRect(canvas.width / 2, canvas.height / 2, 50, 50)
 
-        let x = canvas.width /2;
-        let y = canvas.height /2
+        let x = canvas.width / 2;
+        let y = canvas.height / 2
 
         function animation() {
-            requestAnimationFrame (animation)
+            requestAnimationFrame(animation)
 
             ctx.fillStyle = "black"
             ctx.fillRect(0, 0, canvas.width, canvas.height)
 
             ctx.fillStyle = "blue"
             ctx.fillRect(x, y, 50, 50)
-            if (y < canvas.height - 50)
-            y += 5;
+           // if (y < canvas.height - 50)
+             //   y += 20;
         }
-        animation ();
+        addEventListener('keydown', (tecla) => {
+            if (tecla.code == "KeyA")
+                x -= 30
+            else if (tecla.code == "KeyD")
+                x += 30
+            else if (tecla.code == "KeyW")
+                y-= 30
+            else if (tecla.code == "KeyS")
+                y+= 30
+        })
+
+        animation();
     </script>
 
 </body>
-
-
-
-
 
 </html>
